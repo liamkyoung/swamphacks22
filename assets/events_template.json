@@ -1,0 +1,30 @@
+{
+    "schools": [
+        "University of Florida", 
+        "Florida State University", 
+        "University of Central Florida", 
+        "University of North Florida"
+    ],
+    "events": [
+        {
+            "name": "",
+            "type": "",
+            "price": "",
+            "organizationName": "",
+            "dateTime": "",
+            "description": "",
+            "comeIf": "",
+            "link": "",
+            "location": "",
+            "startTime": "",
+            "endTime": ""
+        }
+    ],
+    "organizations": [
+        {
+            "name": "",
+            "description": "",
+            "link": ""
+        }
+    ]
+}
