@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import firebase from "../../firebase/firebase"
+import { useAuthState } from "react-firebase-hooks/auth"
 
 export default function Home() {
   const Map = dynamic(() => import('../components/map'), { loading: () => <p>A map is loading</p>,  ssr: false })
