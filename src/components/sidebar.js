@@ -45,10 +45,10 @@ function Sidebar () {
                 </div>
             </Link>
         </div>
-        
-        <Dropdown items={schools}/>
-        <Calendar />
         <SearchBar />
+        <Dropdown items={schools}/>
+        <Calendar className='flex-grow' />
+        
       </div>
     </div>
   )
