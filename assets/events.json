@@ -17,7 +17,8 @@
             "link": "https://krishnalunch.com/",
             "location": "Plaza of the Americas (Southwest)",
             "startTime": "11:00",
-            "endTime": "14:00"
+            "endTime": "14:00",
+            "attendance": 0
         }
     ],
     "organizations": [
