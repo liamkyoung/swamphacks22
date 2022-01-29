@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
+import SideBar from '../components/sidebar'
 import firebase from "../../firebase/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 
@@ -16,10 +17,10 @@ export default function Home() {
           integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
           crossOrigin=""/>
       </Head>
-
-      <h1 className='bg-DARK_BLUE text-white'>Hello!</h1>
-      <div>
+      
+      <div id='main' className='flex justify-center align-center'>
         <Map />
+        <SideBar />
       </div>
     </div>
   )
