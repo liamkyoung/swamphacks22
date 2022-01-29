@@ -3,37 +3,55 @@
 @tailwind utilities;
 
 @layer utilities {
-
     .mapContainer {
         height: 100vh;
         width: 100%;
     }
+}
 
-    #map-anchor {
-        width: 3rem;
-        height: 3rem;
-        background: #F5853F;
-        opacity: 80%;
-        border-radius: 50%;
-        font-size: 2rem;
-        justify-content: center;
-        text-align: center;
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-        position: absolute;
-        transform: translate(0, -3rem);
-    }
+* {
+    box-sizing: border-box;
+}
 
-    #map-anchor::before {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-left: 1rem solid transparent;
-        border-right: 1rem solid transparent;
-        border-top: 2rem solid #F5853F;
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: coral;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+}
 
-        z-index: -1;
-        position: absolute;
-        transform: translate(0, 2rem);
-    }
+#map-anchor {
+    width: 3rem;
+    height: 3rem;
+    background: #F5853F;
+    opacity: 80%;
+    border-radius: 50%;
+    font-size: 2rem;
+    justify-content: center;
+    text-align: center;
+
+    position: absolute;
+    transform: translate(0, -3rem);
+}
+
+#map-anchor::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 2rem solid #F5853F;
+
+    z-index: -1;
+    position: absolute;
+    transform: translate(0, 2rem);
 }
