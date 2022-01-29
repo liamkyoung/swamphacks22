@@ -18,8 +18,8 @@ export default function Home() {
           crossOrigin=""/>
       </Head>
       
-      <div id='main' className='flex justify-center align-center'>
-        <Map />
+      <div id='main' className='relative flex justify-center align-center'>
+        <Map className='absolute top-0 left-0 z-0'/>
         <SideBar />
       </div>
     </div>

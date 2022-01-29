@@ -2,6 +2,8 @@ import React from 'react';
 import Dropdown from './dropdown';
 import Image from 'next/image'
 import LibraryIcon from '@heroicons/react/solid/LibraryIcon'
+import MenuIcon from '@heroicons/react/solid/MenuIcon'
+import Calendar from './calendar'
 import SearchBar from './searchbar'
 import Link from 'next/link'
 
@@ -28,9 +30,13 @@ function Sidebar () {
         unavailable: true
       }
   ]
-  
+
   return (
-      <div className='hidden md:flex flex-col bg-GRAY px-24 py-12 text-center justify-between'>
+    <div className='relative h-screen'>
+      <div className='absolute right-10 top-16 md:hidden cursor-pointer z-100'>
+        <MenuIcon className='h-12 w-12' />
+      </div>
+      <div className='hidden md:flex flex-col bg-GRAY px-12 py-12 text-center justify-between h-full'>
         <div className='text-BLUE hover:text-ORANGE hover:cursor-pointer'>
             <Link href="/">
                 <div className='flex flex-col justify-center items-center'>
@@ -41,11 +47,12 @@ function Sidebar () {
         </div>
         
         <Dropdown items={schools}/>
-        <h1>Weekly Calendar</h1>
-        <h1>Filter</h1>
+        <Calendar />
         <SearchBar />
       </div>
+    </div>
   )
+  
 }
 
 export default Sidebar;
