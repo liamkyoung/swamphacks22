@@ -1,85 +1,75 @@
 {
-    "schools": [
+    "name": "University of Florida",
+    "places": [
         {
-            "name": "University of Florida",
-            "places": [
-                {
-                    "name": "Turlington Plaza",
-                    "loc": [
-                        29.648980,
-                        -82.343855
-                    ]
-                },
-                {
-                    "name": "Plaza of the Americas",
-                    "loc": [
-                        29.650435,
-                        -82.342905
-                    ]
-                },
-                {
-                    "name": "Norman Field",
-                    "loc": [
-                        29.645577,
-                        -82.338742
-                    ]
-                },
-                {
-                    "name": "Library West",
-                    "loc": [
-                        29.651241,
-                        -82.342906
-                    ]
-                },
-                {
-                    "name": "Flavet Field",
-                    "loc": [
-                        29.646621,
-                        -82.354212
-                    ]
-                },
-                {
-                    "name": "Ben Hill Griffin Stadium",
-                    "loc": [
-                        29.646621,
-                        -82.354212
-                    ]
-                },
-                {
-                    "name": "Reitz Union",
-                    "loc": [
-                        29.646564,
-                        -82.347762
-                    ]
-                },
-                {
-                    "name": "Newell Hall",
-                    "loc": [
-                        29.649108,
-                        -82.345180
-                    ]
-                },
-                {
-                    "name": "University Auditorium",
-                    "loc": [
-                        29.6506636,
-                        -82.3440269
-                    ]
-                },
-                {
-                    "name": "Norman Lawn",
-                    "loc": [
-                        29.6506636,
-                        -82.3440269
-                    ]
-                }
+            "name": "Turlington Plaza",
+            "loc": [
+                29.648980,
+                -82.343855
             ]
         },
         {
-            "name": "University of Central Florida",
-            "places": [
-
+            "name": "Plaza of the Americas",
+            "loc": [
+                29.650435,
+                -82.342905
+            ]
+        },
+        {
+            "name": "Norman Field",
+            "loc": [
+                29.645577,
+                -82.338742
+            ]
+        },
+        {
+            "name": "Library West",
+            "loc": [
+                29.651241,
+                -82.342906
+            ]
+        },
+        {
+            "name": "Flavet Field",
+            "loc": [
+                29.646621,
+                -82.354212
+            ]
+        },
+        {
+            "name": "Ben Hill Griffin Stadium",
+            "loc": [
+                29.646621,
+                -82.354212
+            ]
+        },
+        {
+            "name": "Reitz Union",
+            "loc": [
+                29.646564,
+                -82.347762
+            ]
+        },
+        {
+            "name": "Newell Hall",
+            "loc": [
+                29.649108,
+                -82.345180
+            ]
+        },
+        {
+            "name": "University Auditorium",
+            "loc": [
+                29.6506636,
+                -82.3440269
+            ]
+        },
+        {
+            "name": "Norman Lawn",
+            "loc": [
+                29.6506636,
+                -82.3440269
             ]
         }
-    ]   
+    ]
 }
