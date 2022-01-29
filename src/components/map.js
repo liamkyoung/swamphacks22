@@ -1,7 +1,10 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import L from 'leaflet';
 import BottomPopUp from '../components/bottompopup'
+
+const icon = L.icon({ iconUrl: "/images/marker-icon.png" });
 
 const Map = () => {
   const position = [29.649, -82.344]
@@ -12,7 +15,7 @@ const Map = () => {
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={position}>
+                <Marker position={position} icon={icon}>
                     <Popup>
                         <BottomPopUp />
                     </Popup>
