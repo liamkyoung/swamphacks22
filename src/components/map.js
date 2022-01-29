@@ -5,7 +5,7 @@ import L from 'leaflet';
 import BottomPopUp from '../components/bottompopup'
 import AddEventButton from './addeventbutton'
 
-const icon = L.icon({ iconUrl: "/images/marker-icon.png" });
+const icon = L.icon({ iconUrl: "../../assets/images/burger.png" });
 
 const Map = () => {
   const position = [29.649, -82.344]
