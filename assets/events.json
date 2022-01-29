@@ -1,0 +1,31 @@
+{
+    "schools": [
+        "University of Florida", 
+        "Florida State University", 
+        "University of Central Florida", 
+        "University of North Florida"
+    ],
+    "events": [
+        {
+            "name": "Krishna Lunch",
+            "type": "Food",
+            "price": "$5",
+            "organizationName": "Krishna House",
+            "date": "01-31-2022",
+            "description": "Krishna House brings Krishna Lunch to UF from the House of Krishna.",
+            "comeIf": "You like vegan food.",
+            "link": "https://krishnalunch.com/",
+            "location": "Plaza of the Americas (Southwest)",
+            "startTime": "11:00",
+            "endTime": "14:00"
+        }
+    ],
+    "organizations": [
+        {
+            "name": "Krishna House",
+            "description": "Krishna House makes Krishna Lunch.",
+            "link": "https://krishnalunch.com/krishna-house/"
+        }
+    ]
+}
+
