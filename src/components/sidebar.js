@@ -11,22 +11,22 @@ function Sidebar () {
   const schools = [
       {
           id: 1,
-          name: 'UF',
+          name: 'University of Florida',
           unavailable: false
       },
       {
         id: 2,
-        name: 'FSU',
+        name: 'Florida State University',
         unavailable: false
       },
       {
         id: 3,
-        name: 'UCF',
+        name: 'University of Central Florida',
         unavailable: false
       },
       {
         id: 4,
-        name: 'USF',
+        name: 'University of South Florida',
         unavailable: true
       }
   ]

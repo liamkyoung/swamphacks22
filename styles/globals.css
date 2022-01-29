@@ -3,9 +3,27 @@
 @tailwind utilities;
 
 @layer utilities {
-
     .mapContainer {
         height: 100vh;
         width: 100%;
     }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: coral;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
 }
