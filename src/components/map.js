@@ -1,23 +1,25 @@
 import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
+import BottomPopUp from '../components/bottompopup'
 
 const Map = () => {
-  const position = [51.505, -0.09]
+  const position = [29.649, -82.344]
     return (
-        <div className='flex justify-center align-center'>
-            <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{height: 400, width: "100%"}}>
+        <div className='h-auto w-screen'>
+            <MapContainer className='mapContainer' center={position} zoom={20} scrollWheelZoom={false}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 <Marker position={position}>
                     <Popup>
-                    A pretty CSS3 popup. <br /> Easily customizable.
+                        <BottomPopUp />
                     </Popup>
                 </Marker>
-            </MapContainer>
+            </MapContainer> 
         </div>
+           
     )
 }
 
