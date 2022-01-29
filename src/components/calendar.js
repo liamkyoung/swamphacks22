@@ -4,11 +4,11 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 
 function Calendar() {
   return (
-    <div className='m-2 w-full'>
+    <div className='m-2 text-2xl h-auto'>
         <FullCalendar
             plugins={[ dayGridPlugin ]}
             initialView="dayGridMonth"
-            className='h-auto'
+            selectable={true}
         />
     </div>
     
