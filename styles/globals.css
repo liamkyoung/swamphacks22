@@ -38,7 +38,6 @@ a {
 
 #map-anchor::after {
     content: "";
-    position: absolute;
     width: 0;
     height: 0;
     border-left: 1rem solid transparent;
@@ -55,4 +54,20 @@ a {
 }
 .campussy2 {
     background: linear-gradient(0deg, rgba(0,33,165,0.5) 0%, rgba(0,33,165,0.014740930551908282) 100%);
+@keyframes box-slide {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+.animate-box {
+    animation-name: box-slide;
+    animation-duration: 0.3s;
+}
+
+.no-overflow {
+    overflow: hidden;
 }
