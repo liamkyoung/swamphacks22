@@ -1,12 +1,11 @@
-import React from 'react';
+import { React, useState } from 'react';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from "@fullcalendar/interaction"
 
-function Calendar({ view, height, data }) {
-  const handleDate = (args) => {
-    console.log(args)
-  }
+function Calendar({ view, height, data, callback }) {
+  let prevDate = new Date().toISOString().slice(0, 10)
+  const [currentDate, setDate] = useState(prevDate)
 
   return (
     <FullCalendar
@@ -16,7 +15,15 @@ function Calendar({ view, height, data }) {
       aspectRatio={1}
       height={height}
       events={data}
-      dateClick={handleDate}
+      dateClick={(args) => {
+        setDate(args)
+        
+        if (prevDate != currentDate) {
+          prevDate = currentDate
+          callback(currentDate)
+          console.log("CLICKED", args)
+        }
+      }}
       className='overflow-y-hidden text-md font-bold'
     />
   )

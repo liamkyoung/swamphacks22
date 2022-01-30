@@ -6,7 +6,7 @@ import BottomPopUp from '../components/bottompopup'
 import AddEventButton from './addeventbutton'
 
 
-const Map = ({ data }) => {
+function Map({ data }) {
     const [popUpState, setPopUp] = useState(false)
     const [currLocation, setLocation] = useState(null)
     const position = [29.649, -82.344]
@@ -15,9 +15,7 @@ const Map = ({ data }) => {
         html: '<div id="map-anchor">💡</div>'
     });
 
-    function testPrint(e) {
-        console.log(e);
-    }
+    console.log("DATA IN MAP", data)
 
     return (
         <div className='relative h-auto w-screen'>
@@ -27,17 +25,18 @@ const Map = ({ data }) => {
                     url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 {
-                    data.places.map((place) => {
-                        return (
-                            <Marker position={place.loc} icon={icon}
-                                eventHandlers={{ click: () => {
-                                    setPopUp(!popUpState)
-                                    setLocation(place)
-                                } }}
-                            >
-                            </Marker>
-                        )
-                    })
+                    data ? data.map((place) => console.log("Place", place)) : null
+                    // data.places.map((place) => {
+                    //     return (
+                    //         <Marker position={place.loc} icon={icon}
+                    //             eventHandlers={{ click: () => {
+                    //                 setPopUp(!popUpState)
+                    //                 setLocation(place)
+                    //             } }}
+                    //         >
+                    //         </Marker>
+                    //     )
+                    // })
                 }
             </MapContainer>
             <div className='absolute bottom-10 right-5 z-100 h-16 w-16 cursor-pointer text-ORANGE hover:text-BLUE rounded-full'>

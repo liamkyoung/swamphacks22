@@ -7,7 +7,7 @@ import Calendar from './calendar'
 import SearchBar from './searchbar'
 import Link from 'next/link'
 
-function Sidebar () {
+function Sidebar ({ callback }) {
   const schools = [
       {
           id: 1,
@@ -47,7 +47,7 @@ function Sidebar () {
         </div>
         <SearchBar />
         <Dropdown items={schools}/>
-        <Calendar view={"dayGridMonth"} className='flex-grow' />
+        <Calendar callback={callback} view={"dayGridMonth"} className='flex-grow' />
       </div>
     </div>
   )
