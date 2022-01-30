@@ -49,3 +49,10 @@ a {
     position: absolute;
     transform: translate(-1rem, -1rem);
 }
+
+.campussy1 {
+    background: linear-gradient(0deg, rgba(250,70,22,0.5) 0%, rgba(0,33,165,0.014740930551908282) 100%);
+}
+.campussy2 {
+    background: linear-gradient(0deg, rgba(0,33,165,0.5) 0%, rgba(0,33,165,0.014740930551908282) 100%);
+}
