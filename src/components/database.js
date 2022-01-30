@@ -13,6 +13,9 @@ function Database({ date }) {
             return matches;
         });
     }
+
+    return null;
+
 }
 
 export default Database;

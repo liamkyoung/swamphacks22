@@ -9,14 +9,19 @@ import AddEventButton from './addeventbutton'
 const Map = ({ data }) => {
     const [popUpState, setPopUp] = useState(false)
     const [currLocation, setLocation] = useState(null)
-    const position = [29.649, -82.344]
-    const icon = divIcon({
-        className: "",
-        html: '<div id="map-anchor">💡</div>'
-    });
-
+    
     function testPrint(e) {
         console.log(e);
+    }
+
+    let emojis = {
+        "sports": "🏈",
+        "club": "💡",
+        "food": "🍔",
+        "music": "🎵",
+        "university": "🎓",
+        "speaker": "🎤",
+        "fun": "🥂"
     }
 
     return (
@@ -28,6 +33,10 @@ const Map = ({ data }) => {
                 />
                 {
                     data.places.map((place) => {
+                        const icon = divIcon({
+                            className: "",
+                            html: `<div id="map-anchor"><p>${emojis[place.type]}</p></div>`
+                        });
                         return (
                             <Marker position={place.loc} icon={icon}
                                 eventHandlers={{ click: () => {
