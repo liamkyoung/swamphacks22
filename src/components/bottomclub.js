@@ -3,7 +3,7 @@ import Calendar from './calendar'
 
 function BottomClub ({name, description, schedule, meetingData}) {
   return (
-    <div className='flex px-12 py-6'>
+    <div className='flex px-12 py-6 campussy2'>
         <div className='flex-wrap'>
             <h1 className='text-4xl'>{name}</h1><br />
             <h2 className='font-bold text-2xl'>{schedule}</h2>
