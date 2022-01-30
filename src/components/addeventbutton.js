@@ -172,28 +172,34 @@ const locations2 = [
 ]
   const handleSubmit = event => {
     event.preventDefault();
-    // console.log(event.target[0].value); // org
-    // console.log(event.target[1].value); // event
-    // console.log(event.target[2].value); // description
-    // console.log(event.target[3].value); // start date YYYY-MM-DD
-    // console.log(event.target[4].value); // start time HH:MM military
-    // console.log(event.target[5].value); // end time HH:MM military
-    // alert('You have submitted the form.');
+    console.log(event.target[0].value);
+    console.log(event.target[1].value);
+    console.log(event.target[2].value);
+    console.log(event.target[3].value);
+    console.log(event.target[4].value);
+    console.log(event.target[5].value);
+    console.log(event.target[6].value);
+    console.log(event.target[7].value);
+    console.log(event.target[8].value);
+    console.log(event.target[9].value);
 
     let stuff = {
-      date: event.target[3].value,
+      date: event.target[5].value,
       description: event.target[2].value,
-      end_time: event.target[6].value,
+      end_time: event.target[8].value,
       name: event.target[1].value,
       organization: event.target[0].value,
-      start_time: event.target[4].value,
-      type: "fun", // TODO: dropdown
-      price: "Free for students of UF", // TODO: input string
+      start_time: event.target[6].value,
+      type: "university", // TODO: dropdown
+      price: event.target[3].value,
       location: "University Auditorium", // TODO: dropdown
       come_if: "You are a cool person.", // TODO: wait
       link: "https://google.com/", // TODO: wait
       attendance: 0, // TODO: future feature
+      lat: 29.649083585859735,
+      long: -82.34513045683381
     }
+    console.log(stuff);
     firebase.firestore().collection("events").doc().set(stuff)
     .then(() => {
         console.log("Document successfully written!");
