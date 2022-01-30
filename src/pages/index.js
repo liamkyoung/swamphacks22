@@ -3,6 +3,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import SideBar from '../components/sidebar'
 import Data from '../../assets/locations.json'
+import Database from "../components/database"
 import firebase from "../../firebase/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
 import { useCollection } from "react-firebase-hooks/firestore"
@@ -23,6 +24,7 @@ export default function Home() {
       <div id='main' className='relative flex justify-center align-center'>
         <Map className='absolute top-0 left-0 z-0' data={Data}/>
         <SideBar />
+        <Database />
       </div>
     </div>
   )
