@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import SideBar from '../components/sidebar'
+import Database from "../components/database"
 
 import firebase from "../../firebase/firebase"
 import { useAuthState } from "react-firebase-hooks/auth"
@@ -23,6 +24,7 @@ export default function Home() {
       <div id='main' className='relative flex justify-center align-center'>
         <Map className='absolute top-0 left-0 z-0'/>
         <SideBar />
+        <Database />
       </div>
     </div>
   )

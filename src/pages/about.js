@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head'
 
-import firebase from "../../firebase/firebase"
-import { useAuthState } from "react-firebase-hooks/auth"
-import { useCollection } from "react-firebase-hooks/firestore"
+// import firebase from "../../firebase/firebase"
+// import { useCollection } from "react-firebase-hooks/firestore"
+import "firebase/firestore"
 
 function About () {
   // const db = firebase.firestore();
