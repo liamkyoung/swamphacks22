@@ -5,10 +5,32 @@ import Modal from "../components/modal"
 import TextField from '@material-ui/core/TextField';
 import firebase from "../../firebase/firebase"
 import Dropdown from './dropdown.js';
-// import styled from 'styled-components';
-
+import Grid from '@material-ui/core/Grid';
 
 function AddEventButton() {
+  const types = [
+    {
+      "name": "sports"
+    },
+    {
+      "name": "club"
+    },
+    {
+      "name": "food"
+    },
+    {
+      "name": "music"
+    },
+    {
+      "name": "university"
+    },
+    {
+      "name": "speaker"
+    },
+    {
+      "name": "fun"
+    }
+  ]
   const locations = [
     {
         "name": "Turlington Plaza",
@@ -83,6 +105,71 @@ function AddEventButton() {
         "type": "fun"
     }
 ]
+
+const locations2 = [
+  {
+      "type": "Club GBMs",
+      "loc": [
+        29.648980,
+        -82.343855
+      ],
+      "name": "Turlington Plaza"
+      
+  },
+  {
+      "type": "Food",
+      "loc": [
+        29.650435,
+        -82.342905
+      ],
+      "name": "Plaza of the Americas"
+      
+  },
+  {
+      "type": "Fun",
+      "loc": [
+        29.645577,
+        -82.338742
+      ],
+      "name": "Norman Field"
+      
+  },
+  {
+      "type": "Music/Concert",
+      "loc": [
+        29.651241,
+        -82.342906
+      ],
+      "name": "Library West"
+      
+  },
+  {
+      "type": "Sports Games",
+      "loc": [
+        29.646621,
+        -82.354212
+      ],
+      "name": "Flavet Field"
+      
+  },
+  {
+      "type": "Speaker",
+      "loc": [
+        29.646564,
+        -82.347762
+      ],
+      "name": "Reitz Union"
+      
+  },
+  {
+      "type": "University Events",
+      "loc": [
+        29.649108,
+        -82.345180
+      ],
+      "name": "Newell Hall",
+  }
+]
   const handleSubmit = event => {
     event.preventDefault();
     // console.log(event.target[0].value); // org
@@ -130,52 +217,77 @@ function AddEventButton() {
         <div className='flex flex-col items-center'>
           <h1 className='text-center text-3xl'>Event Form</h1>
           <form onSubmit={handleSubmit}>
-            <label for="org">Organization Name:</label><br />
-            <input className='rounded-lg bg-GRAY' type="text" id="org" name="org" /><br />
-            <label for="event">Event Name:</label><br />
-            <in put className='rounded-lg bg-GRAY' type="text" id='event' name='event' /><br />
-            <label for="descrip">Event Description:</label><br />
-            <input className='rounded-lg bg-GRAY' type="text" id='descrip' name='descrip' /><br />
-            <Dropdown items={locations}/>
-            
-            <label for="price">Price:</label><br />
-            <input className='rounded-lg bg-GRAY' type="text" id="price" name="price" /><br />
-            <TextField
-            id="date"
-            label="Start Date"
-            type="date"
-            defaultValue= {today}
-            InputLabelProps={{
-              shrink: true,
-            }}
-            /><br />
-            {/* <input className='rounded-lg bg-GRAY' type="text" id='stime' name='stime' /><br />
-            <label for="start">Start Time:</label><br /> */}
-            <TextField
-            label="Start Time"
-            defaultValue="12:00"
-            type="time"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            // every minute
-            inputProps={{
-              step: 60,
-            }}
-            /><br />
-            <TextField
-            label="End Time"
-            defaultValue="12:00"
-            type="time"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            // every minute
-            inputProps={{
-              step: 60,
-            }}
-            /><br />
+            <Grid container spacing = {10}>
+              <Grid item xs = {5}>
+                <label for="org">Organization:</label><br />
+                <input className='rounded-lg bg-GRAY' type="text" id="org" name="org" /><br />
+                <label for="event">Event Name:</label><br />
+                <input className='rounded-lg bg-GRAY' type="text" id='event' name='event' /><br />
+                <label for="descrip">Event Description:</label><br />
+                <input className='rounded-lg bg-GRAY' type="text" id='descrip' name='descrip' /><br />
+                
+                
+                <label for="price">Price:</label><br />
+                <input className='rounded-lg bg-GRAY' type="text" id="price" name="price" /><br />
+                <label for="locations">Location:</label><br />
+                <div style = {{width:'200px'}}>
+                  <Dropdown items={locations}/><br />
+                </div>
+              </Grid>
+              <Grid item xs={5}>
+                <TextField
+                id="date"
+                label="Start Date"
+                type="date"
+                defaultValue= {today}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                /><br />
+                {/* <input className='rounded-lg bg-GRAY' type="text" id='stime' name='stime' /><br />
+                <label for="start">Start Time:</label><br /> */}
+                <TextField
+                label="Start Time"
+                defaultValue="12:00"
+                type="time"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                // every minute
+                inputProps={{
+                  step: 60,
+                }}
+                /><br />
+                <TextField
+                id="date"
+                label="End Date"
+                type="date"
+                defaultValue= {today}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                /><br />
+                <TextField
+                label="End Time"
+                defaultValue="12:00"
+                type="time"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                // every minute
+                inputProps={{
+                  step: 60,
+                }}
+                /><br /> 
+                <label for="etype">Event Type:</label><br />
+                <div style = {{width:'200px'}}>
+                  <Dropdown items={types}/><br />
+                </div>
+              </Grid>
+            </Grid>
+            {/* <div style = {{height:'300px'}}> */}
             <button type="submit">Submit</button>
+            {/* </div> */}
           </form>
         </div>
         
