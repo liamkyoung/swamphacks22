@@ -26,12 +26,12 @@ function AddEventButton() {
       name: event.target[1].value,
       organization: event.target[0].value,
       start_time: event.target[4].value,
-      type: "fun", // TODO
-      price: "Free for students of UF", // TODO
-      location: "University Auditorium", // TODO
-      come_if: "You are a cool person.", // TODO
-      link: "https://google.com/", // TODO
-      attendance: 0, // TODO
+      type: "fun", // TODO: dropdown
+      price: "Free for students of UF", // TODO: input string
+      location: "University Auditorium", // TODO: dropdown
+      come_if: "You are a cool person.", // TODO: wait
+      link: "https://google.com/", // TODO: wait
+      attendance: 0, // TODO: future feature
     }
     firebase.firestore().collection("events").doc().set(stuff)
     .then(() => {
@@ -43,14 +43,13 @@ function AddEventButton() {
     });
   }
 
-
   const [showModal, setShowModal] = useState(false);
   var today = new Date();
   today = today.getDate();
   return (
     <div className=''>
-      <button onClick={() => setShowModal(true)} className="btn p-3 rounded-full hover:bg-BLUE">
-        <PlusCircleIcon className='h-12 w-12'/>
+      <button onClick={() => setShowModal(true)} className="bg-WHITE rounded-full">
+        <PlusCircleIcon className='text-ORANGE hover:text-BLUE h-12 w-12'/>
       </button>
 
       <Modal show={showModal} onClose={() => setShowModal(false)}>
