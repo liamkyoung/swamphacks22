@@ -9,7 +9,8 @@ import AddEventButton from './addeventbutton'
 const Map = ({ data }) => {
     const [popUpState, setPopUp] = useState(false)
     const [currLocation, setLocation] = useState(null)
-    
+    const position = [29.649, -82.344]
+
     function testPrint(e) {
         console.log(e);
     }
