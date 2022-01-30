@@ -3,11 +3,12 @@ import { PlusCircleIcon } from '@heroicons/react/solid';
 import { useState } from "react";
 import Modal from "../components/modal"
 import TextField from '@material-ui/core/TextField';
-
 import firebase from "../../firebase/firebase"
-
 // import Data from '../../assets/locations.json'
-// import Dropdown from '..
+// import Dropdown from './dropdown.js';
+// import styled from 'styled-components';
+
+
 function AddEventButton() {
   const handleSubmit = event => {
     event.preventDefault();
@@ -62,7 +63,10 @@ function AddEventButton() {
             <input className='rounded-lg bg-GRAY' type="text" id='event' name='event' /><br />
             <label for="descrip">Event Description:</label><br />
             <input className='rounded-lg bg-GRAY' type="text" id='descrip' name='descrip' /><br />
+            {/* <Dropdown locations={Data}/> */}
             
+            <label for="price">Price:</label><br />
+            <input className='rounded-lg bg-GRAY' type="text" id="price" name="price" /><br />
             <TextField
             id="date"
             label="Start Date"
