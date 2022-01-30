@@ -40,9 +40,7 @@ function Map({ data }) {
                         return (
                             <Marker position={[place.lat, place.long]} icon={icon}
                                 eventHandlers={{ click: () => {
-                                    if (!popUpState) {
-                                        setPopUp(!popUpState)
-                                    }
+                                    setPopUp(!popUpState)
                                     setLocation(place)
                                 } }}
                             >
