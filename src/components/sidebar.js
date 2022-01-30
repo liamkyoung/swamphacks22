@@ -6,6 +6,7 @@ import MenuIcon from '@heroicons/react/solid/MenuIcon'
 import Calendar from './calendar'
 import SearchBar from './searchbar'
 import Link from 'next/link'
+import logo from "../../public/logo.png"
 
 function Sidebar () {
   const schools = [
@@ -37,11 +38,11 @@ function Sidebar () {
         <MenuIcon className='h-14 w-14 text-ORANGE' />
       </div>
       <div className='hidden md:flex flex-col drop-shadow-2xl px-12 py-12 text-center justify-between h-full'>
-        <div className='text-BLUE hover:text-ORANGE hover:cursor-pointer'>
+        <div className='text-ORANGE hover:text-BLUE hover:cursor-pointer'>
             <Link href="/">
                 <div className='flex flex-col justify-center items-center'>
-                    <LibraryIcon className='w-16 h-16' />
-                    <h1 className='text-xl'>Campus</h1>
+                    <Image alt="Campus Logo" src={logo} width={96} height={96} />
+                    <h1 className='text-3xl font-mono'>Campus</h1>
                 </div>
             </Link>
         </div>

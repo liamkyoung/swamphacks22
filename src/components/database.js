@@ -15,7 +15,6 @@ function Database({ date }) {
     }
 
     return null;
-
 }
 
 export default Database;
