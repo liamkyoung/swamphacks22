@@ -20,7 +20,6 @@ export default function Modal({ show, onClose, children }) {
         <div className={styles.overlay}>
             <div className={styles.modal}>
                 <div className={styles.header}>
-<<<<<<< HEAD
                     <div style={{}}>
                         <div style={{float: 'right'}}>
                             <a href="#" onClick={handleClose}>
@@ -28,11 +27,6 @@ export default function Modal({ show, onClose, children }) {
                             </a>
                         </div>
                     </div>
-=======
-                    <a href="#" onClick={handleClose}>
-                        <button className="btn p-3 rounded-md">Close</button>
-                    </a>
->>>>>>> 7ecdcfbaa654e5720a756b1bf02518a24b153f4f
                 </div>
                 <div className={styles.body}>
                     { children }
