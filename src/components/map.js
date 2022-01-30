@@ -26,7 +26,7 @@ const Map = ({ data }) => {
     }
 
     return (
-        <div className='relative h-auto w-screen'>
+        <div className='overflow-hidden relative h-auto w-screen'>
             <MapContainer className='mapContainer absolute left-0 top-0 z-0' center={position} zoom={20} scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -41,7 +41,9 @@ const Map = ({ data }) => {
                         return (
                             <Marker position={place.loc} icon={icon}
                                 eventHandlers={{ click: () => {
-                                    setPopUp(!popUpState)
+                                    if(!popUpState) {
+                                        setPopUp(!popUpState)
+                                    }
                                     setLocation(place)
                                 } }}
                             >
