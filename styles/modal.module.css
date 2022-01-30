@@ -1,5 +1,14 @@
 .modal {
-    background: #fff;
+    /*E3E3E3
+    background: #E3E3E3;
+    EfBdeD
+    EFBDEB
+    43AA8B
+    0021A5
+    FA4616
+    85DCBB*/
+    background-image: radial-gradient(#FFFFF0,#FCF5E5,#DCC7AA);
+    /* background: #DCC7AA; */
     width: 500px;
     height: 600px;
     border-radius: 15px;
