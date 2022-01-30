@@ -13,6 +13,11 @@ function Database({ date }) {
             return matches;
         });
     }
+
+    return null;
+    // <div style={{ margin: '5px 0' }}>
+    //         <button onClick={getEvents} style={{ width: '100%' }}>Get events</button>
+    // </div>
 }
 
 export default Database;

@@ -4,10 +4,41 @@ import { useState } from "react";
 import Modal from "../components/modal"
 import TextField from '@material-ui/core/TextField';
 
+import firebase from "../../firebase/firebase"
+
 function AddEventButton() {
   const handleSubmit = event => {
     event.preventDefault();
-    alert('You have submitted the form.')
+    // console.log(event.target[0].value); // org
+    // console.log(event.target[1].value); // event
+    // console.log(event.target[2].value); // description
+    // console.log(event.target[3].value); // start date YYYY-MM-DD
+    // console.log(event.target[4].value); // start time HH:MM military
+    // console.log(event.target[5].value); // end time HH:MM military
+    // alert('You have submitted the form.');
+
+    let stuff = {
+      date: event.target[3].value,
+      description: event.target[2].value,
+      end_time: event.target[6].value,
+      name: event.target[1].value,
+      organization: event.target[0].value,
+      start_time: event.target[4].value,
+      type: "fun", // TODO
+      price: "Free for students of UF", // TODO
+      location: "University Auditorium", // TODO
+      come_if: "You are a cool person.", // TODO
+      link: "https://google.com/", // TODO
+      attendance: 0, // TODO
+    }
+    firebase.firestore().collection("events").doc().set(stuff)
+    .then(() => {
+        console.log("Document successfully written!");
+        console.log(stuff);
+    })
+    .catch((error) => {
+        console.error("Error writing document: ", error);
+    });
   }
   const [showModal, setShowModal] = useState(false);
   var today = new Date();
@@ -49,15 +80,6 @@ function AddEventButton() {
             // 5 minutes
             inputProps={{
               step: 60,
-            }}
-            /><br />
-            <TextField
-            id="date"
-            label="End Date"
-            type="date"
-            defaultValue= {today}
-            InputLabelProps={{
-              shrink: true,
             }}
             /><br />
             <TextField
