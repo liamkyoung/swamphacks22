@@ -31,7 +31,7 @@ function Map({ data }) {
                     url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 {
-                    data.places.map((place) => {
+                    data.map((place) => {
                         const icon = divIcon({
                             className: "",
                             html: `<div id="map-anchor"><p>${emojis[place.type]}</p></div>`
