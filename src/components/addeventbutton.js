@@ -3,12 +3,15 @@ import { PlusCircleIcon } from '@heroicons/react/solid';
 import { useState } from "react";
 import Modal from "../components/modal"
 import TextField from '@material-ui/core/TextField';
-
+// import Data from '../../assets/locations.json'
+// import Dropdown from '..
 function AddEventButton() {
   const handleSubmit = event => {
     event.preventDefault();
     alert('You have submitted the form.')
   }
+
+
   const [showModal, setShowModal] = useState(false);
   var today = new Date();
   today = today.getDate();
@@ -28,6 +31,7 @@ function AddEventButton() {
             <input className='rounded-lg bg-GRAY' type="text" id='event' name='event' /><br />
             <label for="descrip">Event Description:</label><br />
             <input className='rounded-lg bg-GRAY' type="text" id='descrip' name='descrip' /><br />
+            
             <TextField
             id="date"
             label="Start Date"
@@ -46,7 +50,7 @@ function AddEventButton() {
             InputLabelProps={{
               shrink: true,
             }}
-            // 5 minutes
+            // every minute
             inputProps={{
               step: 60,
             }}
@@ -67,7 +71,7 @@ function AddEventButton() {
             InputLabelProps={{
               shrink: true,
             }}
-            // 5 minutes
+            // every minute
             inputProps={{
               step: 60,
             }}
@@ -80,5 +84,8 @@ function AddEventButton() {
     </div>
   )
 }
+//location dropdown, price, type dropdown 
 
+//want to do: make close button round and put left, put submit button on bottom
+// right and put it in circle, change Event Form font
 export default AddEventButton;
