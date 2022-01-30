@@ -36,7 +36,7 @@ a {
     transform: translate(0, -3rem);
 }
 
-#map-anchor::before {
+#map-anchor::after {
     content: "";
     position: absolute;
     width: 0;
@@ -47,5 +47,12 @@ a {
 
     z-index: -1;
     position: absolute;
-    transform: translate(0, 2rem);
+    transform: translate(-1rem, -1rem);
+}
+
+.campussy1 {
+    background: linear-gradient(0deg, rgba(250,70,22,0.5) 0%, rgba(0,33,165,0.014740930551908282) 100%);
+}
+.campussy2 {
+    background: linear-gradient(0deg, rgba(0,33,165,0.5) 0%, rgba(0,33,165,0.014740930551908282) 100%);
 }
