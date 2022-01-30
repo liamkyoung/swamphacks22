@@ -4,12 +4,85 @@ import { useState } from "react";
 import Modal from "../components/modal"
 import TextField from '@material-ui/core/TextField';
 import firebase from "../../firebase/firebase"
-// import Data from '../../assets/locations.json'
-// import Dropdown from './dropdown.js';
+import Dropdown from './dropdown.js';
 // import styled from 'styled-components';
 
 
 function AddEventButton() {
+  const locations = [
+    {
+        "name": "Turlington Plaza",
+        "loc": [
+            29.648980,
+            -82.343855
+        ],
+        "type": "food"
+    },
+    {
+        "name": "Plaza of the Americas",
+        "loc": [
+            29.650435,
+            -82.342905
+        ],
+        "type": "club"
+    },
+    {
+        "name": "Norman Field",
+        "loc": [
+            29.645577,
+            -82.338742
+        ],
+        "type": "sports"
+    },
+    {
+        "name": "Library West",
+        "loc": [
+            29.651241,
+            -82.342906
+        ],
+        "type": "food"
+    },
+    {
+        "name": "Flavet Field",
+        "loc": [
+            29.646621,
+            -82.354212
+        ],
+        "type": "university"
+    },
+    {
+        "name": "Reitz Union",
+        "loc": [
+            29.646564,
+            -82.347762
+        ],
+        "type": "speaker"
+    },
+    {
+        "name": "Newell Hall",
+        "loc": [
+            29.649108,
+            -82.345180
+        ],
+        "type": "sports"
+    },
+    {
+        "name": "University Auditorium",
+        "loc": [
+            29.6506636,
+            -82.3440269
+        ],
+        "type": "university"
+    },
+    {
+        "name": "Norman Lawn",
+        "loc": [
+            29.6506636,
+            -82.3440269
+        ],
+        "type": "fun"
+    }
+]
   const handleSubmit = event => {
     event.preventDefault();
     // console.log(event.target[0].value); // org
@@ -63,7 +136,7 @@ function AddEventButton() {
             <input className='rounded-lg bg-GRAY' type="text" id='event' name='event' /><br />
             <label for="descrip">Event Description:</label><br />
             <input className='rounded-lg bg-GRAY' type="text" id='descrip' name='descrip' /><br />
-            {/* <Dropdown locations={Data}/> */}
+            <Dropdown items={locations}/>
             
             <label for="price">Price:</label><br />
             <input className='rounded-lg bg-GRAY' type="text" id="price" name="price" /><br />
