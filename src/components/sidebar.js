@@ -36,7 +36,7 @@ function Sidebar () {
       <div className='absolute right-8 top-2 md:hidden cursor-pointer z-100'>
         <MenuIcon className='h-14 w-14 text-ORANGE' />
       </div>
-      <div className='hidden md:flex flex-col bg-GRAY drop-shadow-2xl px-12 py-12 text-center justify-between h-full'>
+      <div className='hidden md:flex flex-col drop-shadow-2xl px-12 py-12 text-center justify-between h-full'>
         <div className='text-BLUE hover:text-ORANGE hover:cursor-pointer'>
             <Link href="/">
                 <div className='flex flex-col justify-center items-center'>
@@ -47,8 +47,7 @@ function Sidebar () {
         </div>
         <SearchBar />
         <Dropdown items={schools}/>
-        <Calendar className='flex-grow' />
-        
+        <Calendar view={"dayGridMonth"} className='flex-grow' />
       </div>
     </div>
   )

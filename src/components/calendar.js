@@ -1,18 +1,24 @@
 import React from 'react';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
+import interactionPlugin from "@fullcalendar/interaction"
 
-function Calendar() {
+function Calendar({ view, height, data }) {
+  const handleDate = (args) => {
+    console.log(args)
+  }
+
   return (
-    <div className='text-md font-bold'>
-        <FullCalendar
-            plugins={[ dayGridPlugin ]}
-            initialView="dayGridMonth"
-            selectable={true}
-            className='overflow-y-hidden'
-        />
-    </div>
-    
+    <FullCalendar
+      plugins={[ dayGridPlugin, interactionPlugin ]}
+      initialView={view}
+      selectable
+      aspectRatio={1}
+      height={height}
+      events={data}
+      dateClick={handleDate}
+      className='overflow-y-hidden text-md font-bold'
+    />
   )
 }
 
