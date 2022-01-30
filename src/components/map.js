@@ -10,33 +10,44 @@ function Map({ data }) {
     const [popUpState, setPopUp] = useState(false)
     const [currLocation, setLocation] = useState(null)
     const position = [29.649, -82.344]
-    const icon = divIcon({
-        className: "",
-        html: '<div id="map-anchor">💡</div>'
-    });
 
     console.log("DATA IN MAP", data)
 
+    let emojis = {
+        "sports": "🏈",
+        "club": "💡",
+        "food": "🍔",
+        "music": "🎵",
+        "university": "🎓",
+        "speaker": "🎤",
+        "fun": "🥂"
+    }
+
     return (
-        <div className='relative h-auto w-screen'>
+        <div className='overflow-hidden relative h-auto w-screen'>
             <MapContainer className='mapContainer absolute left-0 top-0 z-0' center={position} zoom={20} scrollWheelZoom={true}>
                 <TileLayer
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
                 {
-                    data ? data.map((place) => console.log("Place", place)) : null
-                    // data.places.map((place) => {
-                    //     return (
-                    //         <Marker position={place.loc} icon={icon}
-                    //             eventHandlers={{ click: () => {
-                    //                 setPopUp(!popUpState)
-                    //                 setLocation(place)
-                    //             } }}
-                    //         >
-                    //         </Marker>
-                    //     )
-                    // })
+                    data.places.map((place) => {
+                        const icon = divIcon({
+                            className: "",
+                            html: `<div id="map-anchor"><p>${emojis[place.type]}</p></div>`
+                        });
+                        return (
+                            <Marker position={place.loc} icon={icon}
+                                eventHandlers={{ click: () => {
+                                    if(!popUpState) {
+                                        setPopUp(!popUpState)
+                                    }
+                                    setLocation(place)
+                                } }}
+                            >
+                            </Marker>
+                        )
+                    })
                 }
             </MapContainer>
             <div className='absolute bottom-10 right-5 z-100 h-16 w-16 cursor-pointer text-ORANGE hover:text-BLUE rounded-full'>
