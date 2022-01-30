@@ -50,7 +50,8 @@ a {
 }
 
 .campussy1 {
-    background: linear-gradient(0deg, rgba(250,70,22,0.5) 0%, rgba(0,33,165,0.014740930551908282) 100%);
+    background: radial-gradient(#FFFFF0,#FCF5E5,#DCC7AA);
+    box-shadow: -2px 0 30px #000000;
 }
 .campussy2 {
     background: linear-gradient(0deg, rgba(0,33,165,0.5) 0%, rgba(0,33,165,0.014740930551908282) 100%);
