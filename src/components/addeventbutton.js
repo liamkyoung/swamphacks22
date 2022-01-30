@@ -133,7 +133,7 @@ function AddEventButton() {
             <label for="org">Organization Name:</label><br />
             <input className='rounded-lg bg-GRAY' type="text" id="org" name="org" /><br />
             <label for="event">Event Name:</label><br />
-            <input className='rounded-lg bg-GRAY' type="text" id='event' name='event' /><br />
+            <in put className='rounded-lg bg-GRAY' type="text" id='event' name='event' /><br />
             <label for="descrip">Event Description:</label><br />
             <input className='rounded-lg bg-GRAY' type="text" id='descrip' name='descrip' /><br />
             <Dropdown items={locations}/>
