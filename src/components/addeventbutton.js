@@ -8,12 +8,16 @@ function AddEventButton() {
   return (
     <div className=''>
       <button onClick={() => setShowModal(true)} className="btn">
-        {/* <PlusCircleIcon /> */}
-        Modal
+        <PlusCircleIcon className='h-12 w-12'/>
       </button>
 
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        JAISJQIJIJDIWJIJSDISJDIW
+        <form>
+          <label for="fname">First name:</label><br />
+          <input className='rounded-lg bg-GRAY' type="text" id="fname" name="fname" /><br />
+          <label for="lname">Last name:</label><br />
+          <input className='rounded-lg bg-GRAY' type="text" id="lname" name="lname" />
+        </form>
       </Modal>
     </div>
   )

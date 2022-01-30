@@ -4,7 +4,7 @@
     height: 600px;
     border-radius: 15px;
     padding: 20px;
-    z-index: 100;
+    z-index: 200;
 }
 
 .header {

@@ -14,15 +14,10 @@ a {
     text-decoration: none;
 }
 
-* {
-    box-sizing: border-box;
-}
-
 .btn {
     display: inline-block;
     color: #fff;
-    background: coral;
-    padding: 10px 20px;
+    background: #F5853F;
     cursor: pointer;
     border: 0;
     border-radius: 5px;

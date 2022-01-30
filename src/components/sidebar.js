@@ -33,10 +33,10 @@ function Sidebar () {
 
   return (
     <div className='relative h-screen'>
-      <div className='absolute right-10 top-16 md:hidden cursor-pointer z-100'>
-        <MenuIcon className='h-12 w-12' />
+      <div className='absolute right-8 top-2 md:hidden cursor-pointer z-100'>
+        <MenuIcon className='h-14 w-14 text-ORANGE' />
       </div>
-      <div className='hidden md:flex flex-col bg-GRAY px-12 py-12 text-center justify-between h-full'>
+      <div className='hidden md:flex flex-col bg-GRAY drop-shadow-2xl px-12 py-12 text-center justify-between h-full'>
         <div className='text-BLUE hover:text-ORANGE hover:cursor-pointer'>
             <Link href="/">
                 <div className='flex flex-col justify-center items-center'>

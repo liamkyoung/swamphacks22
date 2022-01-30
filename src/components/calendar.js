@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 
 function Calendar() {
   return (
-    <div className='text-md font-bold h-auto'>
+    <div className='text-md font-bold'>
         <FullCalendar
             plugins={[ dayGridPlugin ]}
             initialView="dayGridMonth"
