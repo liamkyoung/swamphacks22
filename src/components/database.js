@@ -15,9 +15,12 @@ function Database({ date }) {
     }
 
     return null;
+<<<<<<< HEAD
     // <div style={{ margin: '5px 0' }}>
     //         <button onClick={getEvents} style={{ width: '100%' }}>Get events</button>
     // </div>
+=======
+>>>>>>> andrew
 }
 
 export default Database;
