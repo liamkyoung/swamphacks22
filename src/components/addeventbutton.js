@@ -7,7 +7,7 @@ function AddEventButton() {
   const [showModal, setShowModal] = useState(false);
   return (
     <div className=''>
-      <button onClick={() => setShowModal(true)} className="btn">
+      <button onClick={() => setShowModal(true)} className="btn p-3 rounded-full hover:bg-BLUE">
         <PlusCircleIcon className='h-12 w-12'/>
       </button>
 
