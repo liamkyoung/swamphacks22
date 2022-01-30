@@ -19,7 +19,7 @@ export default function Modal({ show, onClose, children }) {
             <div className={styles.modal}>
                 <div className={styles.header}>
                     <a href="#" onClick={handleClose}>
-                        <button className="btn p-3">Close</button>
+                        <button className="btn p-3 rounded-md">Close</button>
                     </a>
                 </div>
                 <div className={styles.body}>
