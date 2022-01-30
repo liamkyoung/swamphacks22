@@ -1,13 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import React, { useState, Component } from 'react'
+import React from 'react'
 import SideBar from '../components/sidebar'
-import Data from '../../assets/locations.json'
-import Database from "../components/database"
 import firebase from "../../firebase/firebase"
-import { useAuthState } from "react-firebase-hooks/auth"
-import { useCollection } from "react-firebase-hooks/firestore"
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -24,14 +20,9 @@ class Home extends React.Component {
 
   async componentDidMount() {
     console.log("componentDidMount")
-    this.state.eventData = await this.getEvents(this.state.currentDate)
-  }
-
-  async componentDidUpdate() {
-    console.log("componentDidUpdate")
-    if (this.state.currentDate != this.state.previousDate) {
-      this.state.eventData = await this.getEvents(this.state.currentDate)
-      this.state.previousDate = this.state.currentDate
+    let events = await this.getEvents(this.state.currentDate)
+    if (events) {
+      this.setState({ eventData: events })
     }
   }
 
@@ -46,7 +37,7 @@ class Home extends React.Component {
                 }
             });
             console.log("DATABASE PULL", matches);
-            this.state.eventData = matches
+            this.setState({eventData: matches})
             console.log("THIS.STATE.EVENTDATA", this.state.eventData)
         })
         .catch((e) => console.log("Database Date Pull Failed", e));
@@ -55,11 +46,11 @@ class Home extends React.Component {
   }
 
   async setDate(date) {
-    this.state.currentDate = date
+    this.setState({currentDate: date.dateStr})
     if (this.state.currentDate != this.state.previousDate) {
-      this.state.eventData = await this.getEvents(this.state.currentDate)
-      this.state.previousDate = this.state.currentDate
-      console.log("CHANGING DATE", this.state.eventData)
+      let events = await this.getEvents(this.state.currentDate)
+      this.setState({ eventData: events })
+      this.setState({ previousDate: this.state.currentDate })
     }
     console.log("Set Date", this.state.currentDate)
   }
@@ -79,7 +70,7 @@ class Home extends React.Component {
         </Head>
         
         <div id='main' className='relative flex justify-center align-center'>
-          <Map className='absolute top-0 left-0 z-0' data={this.state.eventData} />
+          {this.state.eventData ? <Map className='absolute top-0 left-0 z-0' data={this.state.eventData} /> : null}
           <SideBar callback={this.setDate} />
         </div>
       </div>

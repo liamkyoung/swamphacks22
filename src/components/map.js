@@ -32,14 +32,17 @@ function Map({ data }) {
                 />
                 {
                     data.map((place) => {
+                        console.log("place", place)
                         const icon = divIcon({
                             className: "",
                             html: `<div id="map-anchor"><p>${emojis[place.type]}</p></div>`
                         });
                         return (
-                            <Marker position={place.loc} icon={icon}
+                            <Marker position={[place.lat, place.long]} icon={icon}
                                 eventHandlers={{ click: () => {
-                                    setPopUp(!popUpState)
+                                    if (!popUpState) {
+                                        setPopUp(!popUpState)
+                                    }
                                     setLocation(place)
                                 } }}
                             >
