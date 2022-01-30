@@ -24,7 +24,7 @@ export default function Home() {
       <div id='main' className='relative flex justify-center align-center'>
         <Map className='absolute top-0 left-0 z-0'/>
         <SideBar />
-        <Database />
+        <Database date={"2022-01-30"} />
       </div>
     </div>
   )

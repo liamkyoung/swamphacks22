@@ -1,19 +1,18 @@
 import firebase from '../../firebase/firebase'
 
-function Database() {
-    const readData = async () => {
-        firebase.firestore().collection("locations").get().then((querySnapshot) => {
+function Database({ date }) {
+    const getEvents = async () => {
+        firebase.firestore().collection("events").get().then((querySnapshot) => {
+            let matches = [];
             querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => ${doc.data()}`);
+                if(doc.data().date == date) {
+                    matches.push(doc.data());
+                }
             });
+            console.log(matches);
+            return matches;
         });
     }
-
-    return (
-        <div style={{ margin: '5px 0' }}>
-            <button onClick={readData} style={{ width: '100%' }}>Send Data To Cloud Firestore</button>
-        </div>
-    )
 }
 
 export default Database;
