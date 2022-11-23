@@ -1,6 +1,6 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/compat/firestore";
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/auth'
+import 'firebase/compat/firestore'
 
 const clientCredentials = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -9,13 +9,12 @@ const clientCredentials = {
   storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-};
-
-console.log(firebase)
-if (!firebase.apps.length) {
-  firebase.initializeApp(clientCredentials);
 }
 
-console.log("Firebase Initialized")
+if (!firebase.apps.length) {
+  firebase.initializeApp(clientCredentials)
+}
 
-export default firebase;
+console.log('Firebase Initialized')
+
+export default firebase
